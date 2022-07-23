@@ -1,0 +1,20 @@
+torch==1.7.1+cu101
+torchvision==0.8.2+cu101
+torchaudio==0.7.2
+adversarial-robustness-toolbox==1.6.0
+numpy==1.19.5
+matplotlib==3.3.2
+Pillow==8.0.1
+pandas==1.2.0
+seaborn==0.11.0
+scipy==1.4.1
+timm==0.5.4
+gpytorch==1.4.2
+tqdm==4.56.2
+scikit-learn==0.23.2
+pyro-ppl==1.5.2
+torchattacks==3.2.6
+git+https://github.com/RobustBench/robustbench.git
+geotorch  # for robustbench
+torchdiffeq  # for robustbench
+tabulate
