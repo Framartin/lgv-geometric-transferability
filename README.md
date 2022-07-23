@@ -114,7 +114,7 @@ bash lgv/imagenet/attack_individual_model.sh >>lgv/log/imagenet/attack_individua
 Create the "_LGV-SWA + RD_" surrogate by applying random directions in weight space from LGV-SWA.
 
 ```shell script
-bash lgv/imagenet/generate_noisy_models_tgvswa.sh >>lgv/log/imagenet/generate_noisy_models_tgvswa.log 2>&1
+bash lgv/imagenet/generate_noisy_models_lgvswa.sh >>lgv/log/imagenet/generate_noisy_models_lgvswa.log 2>&1
 ```
 
 ### Sample RD in LGV weight subspace
