@@ -8,6 +8,15 @@ Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Tran
 
 > We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box ad- versarial attacks. LGV starts from a pretrained surrogate model and col- lects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider opti- mum. Through extensive experiments, we show that LGV alone outper- forms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the impor- tance of the geometry of the weight space to explain the transferability of adversarial examples.
 
+![](lgv/plots/diagram_lr.png)
+*Representation of the proposed LGV approach.*
+
+![](lgv/plots/sharp_flat_cartoon_.png)
+*Conceptual sketch of flat and sharp adversarial examples. Adapted from [Keskar N.S., et al. (2017)](https://arxiv.org/abs/1609.04836v2).*
+
+![](lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png)
+*Surrogate (left) and target (right) losses in the plane containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle), in the (u′,v′) coordinate system. Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.*
+
 ## Install
 
 ```shell script
