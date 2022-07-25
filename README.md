@@ -8,21 +8,41 @@ Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Tran
 
 > We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box ad- versarial attacks. LGV starts from a pretrained surrogate model and col- lects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider opti- mum. Through extensive experiments, we show that LGV alone outper- forms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the impor- tance of the geometry of the weight space to explain the transferability of adversarial examples.
 
+### LGV Technique
+
+LGV collects weights along the SGD trajectory with a high learning rate during 10 epochs and starting from a regularly trained DNN.
+
 <figure>
   <img src="lgv/plots/diagram_lr.png" alt="Representation of the proposed LGV approach" width="450">
-  <figcaption>Representation of the proposed LGV approach. LGV performs 10 epochs from a regularly trained DNN with a high learning rate.</figcaption>
+  <figcaption>Representation of the proposed LGV approach.</figcaption>
 </figure>
+
+Then, regular attacks (I-FGSM, MI-FSGM, PGD, etc.) are applied on one collected model per iteration. 
+
+### Flatness in the feature space
 
 <figure>
   <img src="lgv/plots/sharp_flat_cartoon_.png" alt="Conceptual sketch of flat and sharp adversarial examples" width="450">
   <figcaption>Conceptual sketch of flat and sharp adversarial examples. Adapted from <a href="https://arxiv.org/abs/1609.04836">Keskar N.S., et al. (2017)</a>.</figcaption>
 </figure>
 
+LGV adversarial examples are flatter adversarial examples in the feature space. In the intra-architecture transferability case, the LGV and targets loss contours have similar and shifted shapes. 
+
 <figure>
   <img src="lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png" alt="Losses of surrogates and targets in the disk containing 3 adversarial examples">
-  <figcaption>LGV adversarial examples are flatter adversarial examples in the feature space. In the intra-architecture transferability case, the LGV and targets loss contours have similar and shifted shape. Surrogate (left) and target (right) average losses of 500 planes each containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle). Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.</figcaption>
+  <figcaption>Surrogate (left) and target (right) average losses of 500 planes each containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle). Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.</figcaption>
 </figure>
 
+### Among Other
+
+Read [the full paper](XXX) for insights on the relation between transferability and the geometry of the weight space.
+
+### Citation
+
+If you use our code, please cite our paper:
+```bibtex
+TODO
+```
 
 ## Install
 
