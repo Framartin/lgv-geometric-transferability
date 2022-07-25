@@ -12,19 +12,19 @@ Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Tran
 
 LGV collects weights along the SGD trajectory with a high learning rate during 10 epochs and starting from a regularly trained DNN.
 
-<img src="lgv/plots/diagram_lr.png" alt="Representation of the proposed LGV approach" width="450">
+<img src="lgv/plots/diagram_lr.png?raw=true" alt="Representation of the proposed LGV approach" width="450">
 <p><i>Representation of the proposed LGV approach.</i></p>
 
 Then, regular attacks (I-FGSM, MI-FSGM, PGD, etc.) are applied on one collected model per iteration. 
 
 ### Flatness in the feature space
 
-<img src="lgv/plots/sharp_flat_cartoon_.png" alt="Conceptual sketch of flat and sharp adversarial examples" width="450">
+<img src="lgv/plots/sharp_flat_cartoon_.png?raw=true" alt="Conceptual sketch of flat and sharp adversarial examples" width="450">
 <p><i>Conceptual sketch of flat and sharp adversarial examples. Adapted from <a href="https://arxiv.org/abs/1609.04836">Keskar N.S., et al. (2017)</a>.</i></p>
 
 LGV adversarial examples are flatter adversarial examples in the feature space. In the intra-architecture transferability case, the LGV and targets loss contours have similar and shifted shapes. 
 
-<img src="lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png" alt="Losses of surrogates and targets in the disk containing 3 adversarial examples">
+<img src="lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png?raw=true" alt="Losses of surrogates and targets in the disk containing 3 adversarial examples">
 <p><i>Surrogate (left) and target (right) average losses of 500 planes each containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle). Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.</i></p>
 
 ### Among Other
