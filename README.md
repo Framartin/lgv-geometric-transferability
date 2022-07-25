@@ -8,13 +8,17 @@ Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Tran
 
 > We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box ad- versarial attacks. LGV starts from a pretrained surrogate model and col- lects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider opti- mum. Through extensive experiments, we show that LGV alone outper- forms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the impor- tance of the geometry of the weight space to explain the transferability of adversarial examples.
 
-<img src="lgv/plots/diagram_lr.png" width="350">
+<div style="text-align: center;">
+<img src="lgv/plots/diagram_lr.png" width="450">
+<p><i>Representation of the proposed LGV approach. LGV performs 10 epochs from a regularly trained DNN with a high learning rate.</i></p>
+</div>
 
-*Representation of the proposed LGV approach. LGV performs 10 epochs from a regularly trained DNN with a high learning rate.*
 
-<img src="lgv/plots/sharp_flat_cartoon_.png" width="350">
+<div style="text-align: center;">
+<img src="lgv/plots/sharp_flat_cartoon_.png" width="450">
+<p><i>Conceptual sketch of flat and sharp adversarial examples. Adapted from <a href="https://arxiv.org/abs/1609.04836">Keskar N.S., et al. (2017)</a>.</i></p>
+</div>
 
-*Conceptual sketch of flat and sharp adversarial examples. Adapted from [Keskar N.S., et al. (2017)](https://arxiv.org/abs/1609.04836v2).*
 
 ![](lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png)
 
