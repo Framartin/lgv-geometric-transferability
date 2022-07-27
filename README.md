@@ -2,20 +2,20 @@
 
 Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity](XXX)** by Martin Gubri, Maxime Cordy, Mike Papadakis, Yves Le Traon from the University of Luxembourg and Koushik Sen from University of California, Berkeley.
 
-⏳️ This ️repository contains the code to fully reproduce the experiments of the paper. An easier to use and cleaner implementation will be release soon for future use. ⏳
+⏳️ This repository contains the code to fully reproduce the experiments of the paper. An easier to use and cleaner implementation will be release soon for future use. ⏳
 
 ## Abstract
 
-> We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box ad- versarial attacks. LGV starts from a pretrained surrogate model and col- lects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider opti- mum. Through extensive experiments, we show that LGV alone outper- forms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the impor- tance of the geometry of the weight space to explain the transferability of adversarial examples.
+> We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box adversarial attacks. LGV starts from a pretrained surrogate model and collects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider optimum. Through extensive experiments, we show that LGV alone outperforms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the importance of the geometry of the weight space to explain the transferability of adversarial examples.
 
-### LGV Technique
+## LGV in a nutshell
 
 LGV collects weights along the SGD trajectory with a high learning rate during 10 epochs and starting from a regularly trained DNN.
 
 <img src="lgv/plots/diagram_lr.png?raw=true" alt="Representation of the proposed LGV approach" width="450">
 <p><i>Representation of the proposed LGV approach.</i></p>
 
-Then, regular attacks (I-FGSM, MI-FSGM, PGD, etc.) are applied on one collected model per iteration. 
+Then, regular attacks (I-FGSM, MI-FGSM, PGD, etc.) are applied on one collected model per iteration. 
 
 ### Flatness in the feature space
 
@@ -27,7 +27,7 @@ LGV adversarial examples are flatter adversarial examples in the feature space. 
 <img src="lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png?raw=true" alt="Losses of surrogates and targets in the disk containing 3 adversarial examples">
 <p><i>Surrogate (left) and target (right) average losses of 500 planes each containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle). Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.</i></p>
 
-### Among Other
+### Among other
 
 Read [the full paper](XXX) for insights on the relation between transferability and the geometry of the weight space.
 
@@ -125,7 +125,7 @@ bash lgv/imagenet/generate_parametric_path.sh >>lgv/log/imagenet/generate_parame
 
 ### Flatness in feature space
 
-Plot the loss in the disk defined by the intersection of the L2 ball with the plane defined by these 3 points: the original example, an adversarial examples crafted against a first surrogate and an adversarial examples crafted against a second surrogate.
+Plot the loss in the disk defined by the intersection of the L2 ball with the plane defined by these 3 points: the original example, an adversarial example crafted against a first surrogate and an adversarial example crafted against a second surrogate.
 
 ```shell script
 bash lgv/imagenet/analyse_feature_space.sh >>lgv/log/imagenet/analyse_feature_space.log 2>&1
@@ -192,7 +192,7 @@ bash lgv/imagenet/train_HP_epochs.sh >>lgv/log/imagenet/train_HP_epochs.log 2>&1
 bash lgv/imagenet/train_HP_nb_models.sh >>lgv/log/imagenet/train_HP_nb_models.log 2>&1
 ```
 
-### Number of I-FSGM attack iterations
+### Number of I-FGSM attack iterations
 
 ```shell script
 bash lgv/imagenet/train_HP_nb_iters.sh >>lgv/log/imagenet/train_HP_nb_iters.log 2>&1
