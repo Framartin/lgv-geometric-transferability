@@ -1,6 +1,6 @@
 # LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity
 
-Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity](XXX)** by Martin Gubri, Maxime Cordy, Mike Papadakis, Yves Le Traon from the University of Luxembourg and Koushik Sen from University of California, Berkeley.
+Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity](https://arxiv.org/abs/2207.13129)** by Martin Gubri, Maxime Cordy, Mike Papadakis, Yves Le Traon from the University of Luxembourg and Koushik Sen from University of California, Berkeley.
 
 ⏳️ This repository contains the code to fully reproduce the experiments of the paper. An easier to use and cleaner implementation will be release soon for future use. ⏳
 
@@ -29,7 +29,7 @@ LGV adversarial examples are flatter adversarial examples in the feature space. 
 
 ### Among other
 
-Read [the full paper](XXX) for insights on the relation between transferability and the geometry of the weight space.
+Read [the full paper](https://arxiv.org/abs/2207.13129) for insights on the relation between transferability and the geometry of the weight space.
 
 ### Citation
 
