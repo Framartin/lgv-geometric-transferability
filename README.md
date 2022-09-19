@@ -2,9 +2,31 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2207.13129-b31b1b.svg)](https://arxiv.org/abs/2207.13129)
 
-Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity](https://arxiv.org/abs/2207.13129)** by Martin Gubri, Maxime Cordy, Mike Papadakis, Yves Le Traon from the University of Luxembourg and Koushik Sen from University of California, Berkeley.
+Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity](https://arxiv.org/abs/2207.13129)** by Martin Gubri, Maxime Cordy, Mike Papadakis, Yves Le Traon from the University of Luxembourg and Koushik Sen from the University of California, Berkeley.
 
-⏳️ This repository contains the code to fully reproduce the experiments of the paper. An easier to use and cleaner implementation will be release soon for future use. ⏳
+⚠️️ This repository contains the code to fully reproduce the experiments of the paper.
+
+✅ A clean easy-to-use implementation is available as a pull request to [the `torchattacks` library](https://github.com/Harry24k/adversarial-attacks-pytorch/pull/91).
+
+
+**Getting started**
+
+<!--
+➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/attacks.html#module-torchattacks.attacks.lgv).
+-->
+
+➡️ With this simple example:
+
+```python
+from torchattacks import LGV, BIM
+# train_loader should scale images in [0,1]. A data normalization layer should be added to model. 
+atk = torchattacks.LGV(model, train_loader, lr=0.05, epochs=10, nb_models_epoch=4, wd=1e-4, n_grad=1, attack_class=BIM, eps=4/255, alpha=4/255/10, steps=50, verbose=True)
+atk.collect_models()
+atk.save_models('models/lgv/')
+adv_images = atk(images, labels)
+```
+
+➡️ With [this complete and runnable notebook](https://github.com/Harry24k/adversarial-attacks-pytorch/blob/c4ce3d044d92a5e2af3fc954c29037e704953d2d/demos/Transfer%20Attack%20combined%20with%20LGV%20(ImageNet).ipynb) based on pretrained LGV models.
 
 ## Abstract
 
@@ -35,7 +57,7 @@ Read [the full paper](https://arxiv.org/abs/2207.13129) for insights on the rela
 
 ### Citation
 
-If you use our code, please cite our paper:
+If you use our code or our method, please cite our paper:
 ```bibtex
 @inproceedings{,
    abstract = {We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box ad-versarial attacks. LGV starts from a pretrained surrogate model and collects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider optimum. Through extensive experiments, we show that LGV alone outper-forms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the importance of the geometry of the weight space to explain the transferability of adversarial examples.},
@@ -60,6 +82,15 @@ cd lgv
 ```
 
 ## Train Surrogates
+
+### Retrieve LGV pretrained models
+
+If you wish to avoid collecting models on your own, you can retrieve [our publicly available pretrained LGV models](https://figshare.com/articles/dataset/LGV_pretrained_models/20497821) and skip the next two subsections.
+
+```shell
+wget -O lgv_models.zip https://figshare.com/ndownloader/files/36698862
+unzip lgv_models.zip
+```
 
 ### Retrieve regular DNNs
 
