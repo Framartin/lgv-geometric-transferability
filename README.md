@@ -6,14 +6,10 @@ Implementation of the **ECCV22** paper **[LGV: Boosting Adversarial Example Tran
 
 ⚠️️ This repository contains the code to fully reproduce the experiments of the paper.
 
-✅ A clean easy-to-use implementation is available as a pull request to [the `torchattacks` library](https://github.com/Harry24k/adversarial-attacks-pytorch/pull/91).
+✅ A clean easy-to-use implementation is available in [the `torchattacks` library](https://github.com/Harry24k/adversarial-attacks-pytorch/pull/91).
 
 
-**Getting started**
-
-<!--
-➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/attacks.html#module-torchattacks.attacks.lgv).
--->
+### Getting started
 
 ➡️ With this simple example:
 
@@ -26,7 +22,9 @@ atk.save_models('models/lgv/')
 adv_images = atk(images, labels)
 ```
 
-➡️ With [this complete and runnable notebook](https://github.com/Harry24k/adversarial-attacks-pytorch/blob/c4ce3d044d92a5e2af3fc954c29037e704953d2d/demos/Transfer%20Attack%20combined%20with%20LGV%20(ImageNet).ipynb) based on pretrained LGV models.
+➡️ With [this complete and runnable notebook](https://github.com/Harry24k/adversarial-attacks-pytorch/blob/master/demos/Transfer%20Attack%20combined%20with%20LGV%20(ImageNet).ipynb) based on pretrained LGV models.
+
+➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/attacks.html#module-torchattacks.attacks.lgv).
 
 ## Abstract
 
