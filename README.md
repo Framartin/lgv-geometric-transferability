@@ -24,7 +24,7 @@ adv_images = atk(images, labels)
 
 ➡️ With [this complete and runnable notebook](https://github.com/Harry24k/adversarial-attacks-pytorch/blob/master/demos/Transfer%20Attack%20combined%20with%20LGV%20(ImageNet).ipynb) based on pretrained LGV models.
 
-➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/attacks.html#module-torchattacks.attacks.lgv).
+➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/wrappers.html#module-torchattacks.wrappers.lgv).
 
 ## Abstract
 
@@ -44,7 +44,7 @@ Then, regular attacks (I-FGSM, MI-FGSM, PGD, etc.) are applied on one collected 
 <img src="lgv/plots/sharp_flat_cartoon_.png?raw=true" alt="Conceptual sketch of flat and sharp adversarial examples" width="450">
 <p><i>Conceptual sketch of flat and sharp adversarial examples. Adapted from <a href="https://arxiv.org/abs/1609.04836">Keskar N.S., et al. (2017)</a>.</i></p>
 
-LGV adversarial examples are flatter adversarial examples in the feature space. In the intra-architecture transferability case, the LGV and targets loss contours have similar and shifted shapes. 
+LGV produces flatter adversarial examples in the feature space than the initial DNN. In the intra-architecture transferability case, the LGV and target losses have similar and shifted shapes.
 
 <img src="lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png?raw=true" alt="Losses of surrogates and targets in the disk containing 3 adversarial examples">
 <p><i>Surrogate (left) and target (right) average losses of 500 planes each containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle). Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.</i></p>
