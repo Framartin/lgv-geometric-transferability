@@ -22,7 +22,7 @@ atk.save_models('models/lgv/')
 adv_images = atk(images, labels)
 ```
 
-➡️ With [this complete and runnable notebook](https://github.com/Harry24k/adversarial-attacks-pytorch/blob/master/demos/Transfer%20Attack%20combined%20with%20LGV%20(ImageNet).ipynb) based on pretrained LGV models.
+➡️ With [this complete and runnable notebook](https://github.com/Harry24k/adversarial-attacks-pytorch/blob/master/demo/Transfer%20Attack%20combined%20with%20LGV%20on%20ImageNet.ipynb) based on pretrained LGV models.
 
 ➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/wrappers.html#module-torchattacks.wrappers.lgv).
 
