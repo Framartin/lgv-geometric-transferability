@@ -57,13 +57,17 @@ Read [the full paper](https://arxiv.org/abs/2207.13129) for insights on the rela
 
 If you use our code or our method, please cite our paper:
 ```bibtex
-@inproceedings{,
-   abstract = {We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box ad-versarial attacks. LGV starts from a pretrained surrogate model and collects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider optimum. Through extensive experiments, we show that LGV alone outper-forms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the importance of the geometry of the weight space to explain the transferability of adversarial examples.},
-   author = {Martin Gubri and Maxime Cordy and Mike Papadakis and Yves Le Traon and Koushik Sen},
-   keywords = {Adversarial Examples,Deep Learning,Loss Geometry,Machine Learning Security,Transferability},
-   publisher = {ECCV 2022},
-   title = {LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity},
-   url = {https://github.com/Framartin/lgv-geometric-transferability},
+@InProceedings{gubri_eccv22,
+author="Gubri, Martin and Cordy, Maxime and Papadakis, Mike and Le Traon, Yves and Sen, Koushik",
+editor="Avidan, Shai and Brostow, Gabriel and Ciss{\'e}, Moustapha and Farinella, Giovanni Maria and Hassner, Tal",
+title="LGV: Boosting Adversarial Example Transferability from Large Geometric Vicinity",
+booktitle="Computer Vision -- ECCV 2022",
+year="2022",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="603--618",
+abstract="We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box adversarial attacks. LGV starts from a pretrained surrogate model and collects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider optimum. Through extensive experiments, we show that LGV alone outperforms all (combinations of) four established test-time transformations by 1.8 to 59.9{\%} points. Our findings shed new light on the importance of the geometry of the weight space to explain the transferability of adversarial examples.",
+isbn="978-3-031-19772-7"
 }
 ```
 
