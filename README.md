@@ -26,6 +26,8 @@ adv_images = atk(images, labels)
 
 ➡️ With the documentation of [the `torchattacks.LGV` class](https://adversarial-attacks-pytorch.readthedocs.io/en/latest/wrappers.html#module-torchattacks.wrappers.lgv).
 
+➡️ LGV models are available on [Figshare](https://figshare.com/articles/dataset/LGV_pretrained_models/20497821).
+
 ## Abstract
 
 > We propose transferability from Large Geometric Vicinity (LGV), a new technique to increase the transferability of black-box adversarial attacks. LGV starts from a pretrained surrogate model and collects multiple weight sets from a few additional training epochs with a constant and high learning rate. LGV exploits two geometric properties that we relate to transferability. First, models that belong to a wider weight optimum are better surrogates. Second, we identify a subspace able to generate an effective surrogate ensemble among this wider optimum. Through extensive experiments, we show that LGV alone outperforms all (combinations of) four established test-time transformations by 1.8 to 59.9 percentage points. Our findings shed new light on the importance of the geometry of the weight space to explain the transferability of adversarial examples.
