@@ -41,12 +41,12 @@ LGV collects weights along the SGD trajectory with a high learning rate during 1
 
 Then, regular attacks (I-FGSM, MI-FGSM, PGD, etc.) are applied on one collected model per iteration. 
 
-### Flatness in the feature space
+### Flatness in the input space
 
 <img src="lgv/plots/sharp_flat_cartoon_.png?raw=true" alt="Conceptual sketch of flat and sharp adversarial examples" width="450">
 <p><i>Conceptual sketch of flat and sharp adversarial examples. Adapted from <a href="https://arxiv.org/abs/1609.04836">Keskar N.S., et al. (2017)</a>.</i></p>
 
-LGV produces flatter adversarial examples in the feature space than the initial DNN. In the intra-architecture transferability case, the LGV and target losses have similar and shifted shapes.
+LGV produces flatter adversarial examples in the input space than the initial DNN. In the intra-architecture transferability case, the LGV and target losses have similar and shifted shapes.
 
 <img src="lgv/plots/feature_space/disk_LGV_Initial_DNN_main.png?raw=true" alt="Losses of surrogates and targets in the disk containing 3 adversarial examples">
 <p><i>Surrogate (left) and target (right) average losses of 500 planes each containing the original example (circle), an adversarial example against LGV (square) and one against the initial DNN (triangle). Colours are in log-scale, contours in natural scale. The white circle represents the intersection of the 2-norm ball with the plane.</i></p>
@@ -131,10 +131,10 @@ bash lgv/imagenet/attack_inter_arch.sh >>lgv/log/imagenet/attack_inter_arch.log 
 
 Plot and analysis of all experiments are implemented in `plot.R`.
 
-### Preliminaries: white noise in weight space vs. in feature space
+### Preliminaries: white noise in weight space vs. in input space
 
 Create a surrogate by applying random directions in weight space from 1 DNN (_RD_ surrogate),
-and compare it with random directions in feature space applied at each iteration.
+and compare it with random directions in input space applied at each iteration.
 `generate_noisy_models.sh` executes both, including HP tuning.
 
 ```shell script
@@ -167,7 +167,7 @@ bash lgv/imagenet/generate_random1D_models.sh >>lgv/log/imagenet/generate_random
 bash lgv/imagenet/generate_parametric_path.sh >>lgv/log/imagenet/generate_parametric_path.log 2>&1
 ```
 
-### Flatness in feature space
+### Flatness in input space
 
 Plot the loss in the disk defined by the intersection of the L2 ball with the plane defined by these 3 points: the original example, an adversarial example crafted against a first surrogate and an adversarial example crafted against a second surrogate.
 
